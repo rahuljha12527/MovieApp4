@@ -15,6 +15,10 @@ export const REMOVE_FROM_FAVOURITES='REMOVE_FROM_FAVOURITES';
 
 export const SET_SHOW_FAVOURITES='SET_SHOW_FAVOURITES';
 
+export const ADD_MOVIE_TO_LIST='ADD_MOVIE_TO_LIST';
+
+export const  ADD_SEARCH_RESULT='ADD_SEARCH_RESULT'
+
 // action creators 
 export function addMovies (movies){
     return {
@@ -47,3 +51,30 @@ export function setShowFavourite (val){
     val
   }
 }
+
+export function addMovieToList(movie){
+  return {
+    type:ADD_MOVIE_TO_LIST,
+    movie
+  };
+}
+
+export function handleMovieSearch(movie){
+  const url=` http://www.omdbapi.com/?apikey=d8ca96b8&t=${movie}`;
+
+  return function(dispatch){
+    fetch(url)
+     .then(response=>response.json())
+    .then(movie=>{
+      console.log('movie',movie);
+    })
+
+} 
+  }
+ 
+  export function addMovieSearchResult (movie){
+    return {
+      type: ADD_SEARCH_RESULT,
+      movie
+    }
+  }

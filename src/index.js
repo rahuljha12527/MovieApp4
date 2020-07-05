@@ -20,12 +20,23 @@ import rootReducer from './reducers';
 // }
 
 const logger=({dispatch,getState})=>(next)=>(action)=>{
-    console.log('ACTION_TYPE =',action.type);
+    // console.log('ACTION_TYPE =',action.type);
+        next(action);
+}
+
+const thunk=({dispatch,getState})=>(next)=>(action)=>{
+    // console.log('ACTION_TYPE =',action.type);
+    if(typeof action==='function'){
+        action(dispatch);
+        return;
+    }
         next(action);
 }
 
 
-const store=createStore(rootReducer,applyMiddleware(logger));  
+
+
+const store=createStore(rootReducer,applyMiddleware(logger,thunk));  
 console.log('store',store);
 // console.log('BEFORE STATE',store.getState());
  
