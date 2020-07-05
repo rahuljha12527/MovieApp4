@@ -67,14 +67,16 @@ export function handleMovieSearch(movie){
      .then(response=>response.json())
     .then(movie=>{
       console.log('movie',movie);
+
+      dispatch(addMovieSearchResult(movie));
     })
 
 } 
-  }
+  }  
  
   export function addMovieSearchResult (movie){
     return {
       type: ADD_SEARCH_RESULT,
       movie
-    }
+    };
   }
