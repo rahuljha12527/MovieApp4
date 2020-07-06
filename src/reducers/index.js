@@ -42,7 +42,7 @@ export  function movies (state= initialMoviesState,action){
              }
          case REMOVE_FROM_FAVOURITES:
             const filteredArray=state.favourites.filter(
-                movie=>movie.Title!=action.movie.Title
+                movie=>movie.Title!==action.movie.Title
             );  
             
             return {
@@ -66,7 +66,7 @@ export  function movies (state= initialMoviesState,action){
      }
 
 
-}
+};
 
 const initialSearchState={
     result:{},
