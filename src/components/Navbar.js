@@ -35,7 +35,7 @@ handleSearch=()=>{
 };
 //cool? bro tumne kya change kiya//search ki jagah storekiya hai//yes okay
     render(){
-        console.log('blah',this.props);
+        // console.log('blah',this.props);
         const { showSearchResults,result:movie}=this.props.store;
         return (
             <div className="nav">
@@ -77,5 +77,5 @@ class NavbarWrapper extends React.Component{
         )
     }
 }
-
+    
 export default NavbarWrapper;
