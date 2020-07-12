@@ -1,11 +1,11 @@
 import React from 'react';
+import  {connect} from 'react-redux';
 import {data} from '../data';
 import MovieCard from './MovieCard';
 import Navbar from './Navbar';
 import {addMovies,setShowFavourite} from '../actions';
-import {connect} from '../index';
 
-
+  
 class App extends React.Component { 
   
   componentDidMount(){
@@ -96,6 +96,6 @@ function mapStateToProps(state){
   }
 };
 
- const connectedAppComponent= connect(mapStateToProps)(App);
+ const connectedAppComponent= connect(mapStateToProps)(App); 
 
-export default connectedAppComponent;
+export default connectedAppComponent; 

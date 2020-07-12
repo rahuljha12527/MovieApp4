@@ -80,8 +80,8 @@ export function search (state=initialSearchState,action){
         case ADD_SEARCH_RESULT:
         return {
             ...state,
-            result:action.movie,
-            showSearchResults:true
+            result:action.movie,  
+            showSearchResults:true // ye search result hai
         }
 
         case ADD_MOVIE_TO_LIST:
